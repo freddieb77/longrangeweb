@@ -118,18 +118,82 @@
             justify-content: space-evenly;
         }
         .team-member {
+            position: relative;
             width: 90%;
             max-width: 300px; /* Prevents member cards from getting too wide */
             margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f4f4f4; /* Light taupe background for the card */
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Indicates that it's clickable */
+            text-align: center;
+            overflow: hidden;
         }
+
+        .team-member:hover {
+            transform: translateY(-10px); /* Lift the card on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+        }
+
         .team-member img {
             max-width: 100%;
             height: auto;
             border-radius: 10%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
+
+        .team-member:hover img {
+            transform: scale(1.1); /* Slight zoom on hover */
+            opacity: 0.8;
+        }
+
+        .team-member h3 {
+            margin: 15px 0 5px;
+            font-size: 1.5rem;
+            color: #4a4a4a; /* Darker shade for text */
+        }
+
         .team-member p {
             margin-top: 15px;
-            color: #333;
+            color: #777;
+            transition: color 0.3s ease;
+        }
+
+        .team-member:hover p {
+            color: #333; /* Darken the text on hover */
+        }
+
+        .team-member .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover .overlay {
+            opacity: 1;
+        }
+
+        .team-member .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover .overlay-text {
+            opacity: 1;
         }
 
         /* Modal Style */
@@ -226,8 +290,9 @@
         }
         footer a {
             color: #ffffff;
-            text-decoration: none;
+            text-decoration: underline;
             margin: 0 10px;
+            cursor: pointer;
         }
 
         /* Responsive Styles */
