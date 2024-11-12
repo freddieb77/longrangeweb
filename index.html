@@ -103,6 +103,36 @@
             margin-bottom: 20px;
         }
 
+        .button {
+        position: relative;
+        text-align: center;
+        padding-bottom: 20px; /* Adjust as needed */
+        background-color: #eae5d3; /* Taupe */
+        }
+
+        .hero-button {
+        background-color: #4a5d23;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+        display: inline-block;
+        text-decoration: none;
+        }
+
+        .hero-button:hover {
+        background-color: #8b4513; /* Lighter or darker shade */
+        transform: scale(1.05);
+        }
+
+        .hero-button:active {
+        background-color: #eae5d3; /* Click effect color */
+        transform: scale(0.95);
+        }
+
         .team-section, .services-section, .contact-section {
             padding: 30px 20px;
             background-color: #ffffff;
@@ -382,6 +412,10 @@
         </div>
     </div>
 
+    <div class="button">
+        <a href="https://brokercheck.finra.org/individual/summary/2131012" target="_blank"><buttton type="button" class="hero-button">FINRA Broker Check</buttton></a>
+    </div>
+
     <div class="team-section" id="team">
         <h1>Our Team</h1>
         <div class="team-members">
@@ -454,7 +488,7 @@
             </div>
             <div class="service-card">
                 <h3>Divorce Planning</h3>
-                <p>Since 2011 Perry has been offering financial expertise to attorneys, their clients, and the courts. He is committed to assisting individuals during this challenging life change by providing collaborative and insightful financial guidance throughout the process.</p>
+                <p>Since 2011 Perry has been offering financial expertise to attorneys and their clients. He is committed to assisting individuals during this challenging life change by providing collaborative and insightful financial guidance throughout the process.</p>
                 <p>Please see the Divorce page for more information.</p>
             </div>
         </div>
@@ -508,6 +542,25 @@
         });
     </script>
 
+    <script>
+        const heroButton = document.querySelector('.hero-button');
+
+        heroButton.addEventListener('mouseover', () => {
+        heroButton.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.2)';
+        });
+
+        heroButton.addEventListener('mouseout', () => {
+        heroButton.style.boxShadow = 'none';
+        });
+
+        heroButton.addEventListener('click', () => {
+        heroButton.style.backgroundColor = '#click-color'; // Optional click feedback color
+        setTimeout(() => {
+            heroButton.style.backgroundColor = ''; // Revert to original color after click
+        }, 200);
+        });
+
+    </script>
 
     <script>
         // Function to open the modal
